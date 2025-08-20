@@ -1,38 +1,71 @@
 #include <stdio.h>
 
-int main() {
-    // Quantidade de casas para cada peça
-    int casasTorre = 5;     // Torre: 5 casas para a direita
-    int casasBispo = 5;     // Bispo: 5 casas para cima e à direita
-    int casasRainha = 8;    // Rainha: 8 casas para a esquerda
+/*
+    Programa que simula os movimentos de peças de xadrez:
+    Torre, Bispo, Rainha e Cavalo.
+    Cada peça utiliza estruturas de repetição diferentes para demonstrar seus movimentos.
+*/
 
-    // ------------------- Movimento da Torre -------------------
-    // Utilizando o laço FOR
+int main() {
+    int i, j;
+
+    // ------------------------------
+    // Movimento da Torre (usando for)
+    // ------------------------------
     printf("Movimento da Torre:\n");
-    for (int i = 1; i <= casasTorre; i++) {
+    for (i = 0; i < 3; i++) {
         printf("Direita\n");
     }
-    printf("\n");
 
-    // ------------------- Movimento do Bispo -------------------
-    // Utilizando o laço WHILE
-    printf("Movimento do Bispo:\n");
-    int i = 1;
-    while (i <= casasBispo) {
-        printf("Cima, Direita\n");
+    // ------------------------------
+    // Movimento do Bispo (usando while)
+    // ------------------------------
+    printf("\nMovimento do Bispo:\n");
+    i = 0;
+    while (i < 3) {
+        printf("Diagonal Superior Direita\n");
         i++;
     }
-    printf("\n");
 
-    // ------------------- Movimento da Rainha -------------------
-    // Utilizando o laço DO-WHILE
-    printf("Movimento da Rainha:\n");
-    int j = 1;
+    // ------------------------------
+    // Movimento da Rainha (usando do-while)
+    // ------------------------------
+    printf("\nMovimento da Rainha:\n");
+    i = 0;
     do {
+        printf("Cima\n");
+        i++;
+    } while (i < 3);
+
+    // ------------------------------
+    // Movimento do Cavalo
+    // ------------------------------
+    /*
+        O Cavalo se move em "L":
+        Neste caso: 2 casas para baixo e 1 para a esquerda.
+        Deve ser implementado com loops aninhados:
+        - O loop externo será um for.
+        - O loop interno será um while.
+    */
+
+    printf("\nMovimento do Cavalo:\n");
+
+    int casasBaixo = 2;     // Número de casas para baixo
+    int casasEsquerda = 1;  // Número de casas para esquerda
+
+    // Loop externo (for) -> controla os movimentos "para baixo"
+    for (i = 0; i < casasBaixo; i++) {
+        printf("Baixo\n");
+    }
+
+    // Loop interno (while) -> controla o movimento "para a esquerda"
+    j = 0;
+    while (j < casasEsquerda) {
         printf("Esquerda\n");
         j++;
-    } while (j <= casasRainha);
+    }
 
     return 0;
 }
+
 
